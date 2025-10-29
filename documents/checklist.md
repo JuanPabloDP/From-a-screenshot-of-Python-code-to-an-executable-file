@@ -4,7 +4,7 @@
 - [x] A completed task
 
 - [x] Set repository
-- [ ] Get code and identfy identation
+- [ ] Get code and identfy identation - Gonzalo
 - [ ] Construct and formate the string
-- [ ] Make from a string to a script
+- [ ] Make from a string to a script -Juan Pablo
 - [ ] Execute the script from the main one
