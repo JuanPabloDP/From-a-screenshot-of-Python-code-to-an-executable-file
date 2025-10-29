@@ -1,0 +1,50 @@
+---
+title: "Evidencia de proyecto"
+author: "Juan Pablo De La Peña, Gonzalo Makenly Higuera"
+format: revealjs
+---
+
+## Problematica a Solucionar
+
+Dado que se tiene una captura de pantalla de un código de Python, procesar este de tal forma que obtenga el texto, se formatee con la identación necesaria, se genere un archivo sin errores y se ejecute ahí mismo.  
+
+![Codigo de ejemplo](figures\codpy.png){width=200}
+
+## Implementacion de la Respuesta
+
+1. Función screenshot_to_code(url,fileName)
+
+**Input**: url (dirección de la imagen) y fileName (nombre del archivo a generar)
+
+**Output**: Muestra la imagen, crea el archivo y ejecuta el archivo
+
+**Descripción**: Extrae cada palabra, agrupa por renglones y por medio del número de línea, coordenada y los valores de un histograma, genera un string con los saltos de línea e identaciones implícitas. Después llama a la función string_to_script().
+
+## Implementacion de la Respuesta
+
+2. Función string_to_script(string,fileName,execute=False) 
+
+**Input**: string (generada anteriormente), fileName, execute (True para ejecutar el código, False en caso contrario)
+
+**Output**: Muestra la imagen, crea el archivo y ejecuta el archivo (si es necesario).
+
+**Descripción**: Recibe un string que guarda creando o sobrescribiendo un archivo de Python. En caso de requerir ejecutarlo se lee el archivo antes creado y se ejecuta. 
+
+## Fitros utilizados (Librerias)
+
+* cv2
+* pytesseract
+* pyplot (matplotlib)
+
+## Archivos de entrada
+
+Una captura de pantalla de un código de Python 
+
+## Archivos de salida
+
+```{python}
+
+```
+
+## Conclusiones
+
