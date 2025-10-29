@@ -1,11 +1,19 @@
-import cv2
-import matplotlib.pyplot as plt
-import pytesseract
 
-from stringToScript import string_to_script
+def screenshot_to_code(url,fileName):
+    import cv2
+    import matplotlib.pyplot as plt
+    import pytesseract
 
-def screenshot_to_code(screenshot,fileName):
+    from stringToScript import string_to_script
+    
     pytesseract.pytesseract.tesseract_cmd = r"source\Tesseract-OCR\tesseract.exe"
+
+    screenshot = cv2.imread(url)
+    screenshot_rgb = cv2.cvtColor(screenshot,cv2.COLOR_BGR2RGB)
+
+    plt.imshow(screenshot_rgb)
+    plt.axis("off")
+    plt.show()
 
     data = pytesseract.image_to_data(screenshot, output_type=pytesseract.Output.DATAFRAME)
 
@@ -48,3 +56,5 @@ def screenshot_to_code(screenshot,fileName):
         string += aux
 
     string_to_script(string,fileName,execute=True)
+
+screenshot_to_code("data\codpy.png","resultado")
