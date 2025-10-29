@@ -1,16 +1,13 @@
 import cv2
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 
 import pytesseract
-from pytesseract import Output
 
-from stringToScript.py import string_to_script
+from stringToScript import string_to_script
 
-pytesseract.pytesseract.tesseract_cmd = r"..\source\Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"source\Tesseract-OCR\tesseract.exe"
 
-code = cv2.imread("..\data\codpy.png")
+code = cv2.imread("data\codpy.png")
 
 data = pytesseract.image_to_data(code, output_type=pytesseract.Output.DATAFRAME)
 
