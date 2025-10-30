@@ -1,5 +1,5 @@
 ---
-title: "Evidencia de proyecto"
+title: "Evidencia de Proyecto"
 author: "Juan Pablo De La Peña, Gonzalo Makenly Higuera"
 format: revealjs
 ---
@@ -39,6 +39,8 @@ Dado que se tiene una captura de pantalla de un código de Python, procesar este
 ## Archivos de entrada
 
 Una captura de pantalla de un código de Python 
+
+![Input](figures\codpy.png){width=200}
 
 ## Archivos de salida
 
