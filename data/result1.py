@@ -1,12 +1,11 @@
 
-# Simple Calculator
-	#indentacion de apoyo
+class Animal:
+	def sonido(self):
+		return 'Sonido genérico'
 
-a=int(input('Enter the first number:'))
-b=int(input('Enter the second number:'))
-print('sum:',atb)
+class Perro(Animal):
+	def sonido(self):
+		return 'Guau'
 
-print ('Difference:',a-b)
-print('MuLtipLle:*,a*b)
-
-print( 'Division: *,a/b)
+mi_perro = Perro()
+print(mi_perro.sonido()) # Resultado: Guau
