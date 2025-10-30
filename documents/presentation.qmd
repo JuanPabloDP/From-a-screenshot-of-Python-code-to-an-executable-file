@@ -44,9 +44,30 @@ Una captura de pantalla de un código de Python
 
 ## Archivos de salida
 
-```{python}
+<div style="text-align: center; font-size: 2.5em; margin-top: 150px;">
+<b>Demostración</b>
+</div>
 
-```
+---
+
+Durante la demostración, se espera que el programa:
+
+1. **Muestre la imagen** que contiene el código de Python.  
+2. **Genere automáticamente un archivo `.py`** con el texto extraído.  
+3. **Ejecute el archivo `.py`** mostrando en la consola el resultado del código de la foto.
 
 ## Conclusiones
 
+El proyecto demuestra que es posible convertir una captura de pantalla de código Python en un archivo ejecutable funcional, siempre que la imagen tenga buena calidad y contraste.
+
+El sistema funciona correctamente con imágenes limpias y texto claro, logrando reconstruir y ejecutar el código sin errores mayores en la mayoría de casos.
+
+Sin embargo, a veces se presentan confusiones en la lectura de caracteres especiales, por ejemplo:
+
+Las comillas (‘ ”) pueden confundirse o perderse.
+
+El signo “+” en ocasiones es leído como una “t” o viceversa.
+
+Estos errores se deben a limitaciones del OCR y pueden mitigarse con preprocesamiento de imagen más robusto o modelos OCR entrenados específicamente en código fuente.
+
+Como mejora futura, se puede integrar un corrector de sintaxis automática y un filtro de símbolos frecuentes en Python para reducir errores.

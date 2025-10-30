@@ -1,0 +1,106 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Evidencia de Proyecto\"\n",
+        "author: \"Juan Pablo De La Peña, Gonzalo Makenly Higuera\"\n",
+        "format: revealjs\n",
+        "---\n",
+        "\n",
+        "\n",
+        "## Problematica a Solucionar\n",
+        "\n",
+        "Dado que se tiene una captura de pantalla de un código de Python, procesar este de tal forma que obtenga el texto, se formatee con la identación necesaria, se genere un archivo sin errores y se ejecute ahí mismo.  \n",
+        "\n",
+        "![Codigo de ejemplo](figures\\codpy.png){width=200}\n",
+        "\n",
+        "## Implementacion de la Respuesta\n",
+        "\n",
+        "1. Función screenshot_to_code(url,fileName)\n",
+        "\n",
+        "**Input**: url (dirección de la imagen) y fileName (nombre del archivo a generar)\n",
+        "\n",
+        "**Output**: Muestra la imagen, crea el archivo y ejecuta el archivo\n",
+        "\n",
+        "**Descripción**: Extrae cada palabra, agrupa por renglones y por medio del número de línea, coordenada y los valores de un histograma, genera un string con los saltos de línea e identaciones implícitas. Después llama a la función string_to_script().\n",
+        "\n",
+        "## Implementacion de la Respuesta\n",
+        "\n",
+        "2. Función string_to_script(string,fileName,execute=False) \n",
+        "\n",
+        "**Input**: string (generada anteriormente), fileName, execute (True para ejecutar el código, False en caso contrario)\n",
+        "\n",
+        "**Output**: Muestra la imagen, crea el archivo y ejecuta el archivo (si es necesario).\n",
+        "\n",
+        "**Descripción**: Recibe un string que guarda creando o sobrescribiendo un archivo de Python. En caso de requerir ejecutarlo se lee el archivo antes creado y se ejecuta. \n",
+        "\n",
+        "## Fitros utilizados (Librerias)\n",
+        "\n",
+        "* cv2\n",
+        "* pytesseract\n",
+        "* pyplot (matplotlib)\n",
+        "\n",
+        "## Archivos de entrada\n",
+        "\n",
+        "Una captura de pantalla de un código de Python \n",
+        "\n",
+        "![Input](figures\\codpy.png){width=200}\n",
+        "\n",
+        "## Archivos de salida\n"
+      ],
+      "id": "5ece3790"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import sys, os\n",
+        "sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '..', 'scripts')))\n",
+        "\n",
+        "from screenshotToCode import screenshot_to_code\n",
+        "\n",
+        "# Ejemplo de uso\n",
+        "url = \"figures/codpy.png\"\n",
+        "screenshot_to_code(url, \"resultado\", execute=True)"
+      ],
+      "id": "6c510ad0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Conclusiones\n",
+        "\n",
+        "El proyecto demuestra que es posible convertir una captura de pantalla de código Python en un archivo ejecutable funcional, siempre que la imagen tenga buena calidad y contraste.\n",
+        "\n",
+        "El sistema funciona correctamente con imágenes limpias y texto claro, logrando reconstruir y ejecutar el código sin errores mayores en la mayoría de casos.\n",
+        "\n",
+        "Sin embargo, a veces se presentan confusiones en la lectura de caracteres especiales, por ejemplo:\n",
+        "\n",
+        "Las comillas (‘ ”) pueden confundirse o perderse.\n",
+        "\n",
+        "El signo “+” en ocasiones es leído como una “t” o viceversa.\n",
+        "\n",
+        "Estos errores se deben a limitaciones del OCR y pueden mitigarse con preprocesamiento de imagen más robusto o modelos OCR entrenados específicamente en código fuente.\n",
+        "\n",
+        "Como mejora futura, se puede integrar un corrector de sintaxis automática y un filtro de símbolos frecuentes en Python para reducir errores."
+      ],
+      "id": "20470c1d"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "c:\\Users\\User\\anaconda3\\envs\\defecto\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

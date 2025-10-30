@@ -1,3 +1,8 @@
 
-for i in range(1, 6): # Imprime del 1 al 5
-	print (i)
+lenguajes = ['Python', 'C', 'C++', 'Java']
+i=0
+
+while i < len(lenguajes):
+	print(lenguajes [i] )
+
+	it=1
